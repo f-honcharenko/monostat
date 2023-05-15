@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  monostat-bot:
+    container_name: monostat-bot
+    working_dir: /usr/src/app/monostat-bot
+    build:
+      context: ./monostat-bot/
+      dockerfile: ./Dockerfile
+    command: pnpm run start
+    volumes:
+      - .:/usr/src/app/monostat-bot/:delegated
+    env_file:
+      - 'variables.env'
+  monostat-client:
+    container_name: monostat-client
+    working_dir: /usr/src/app/monostat-client
+    build:
+      context: ./monostat-client/
+      dockerfile: ./Dockerfile
+    command: pnpm run start
+    volumes:
+      - .:/usr/src/app/monostat-client/:delegated
+    ports:
+      - 8080:8080
+    env_file:
+      - 'variables.env'
+  monostat-server:
+    container_name: monostat-server
+    working_dir: /usr/src/app/monostat-server
+    build:
+      context: ./monostat-server/
+      dockerfile: ./Dockerfile
+    command: pnpm run start
+    volumes:
+      - .:/usr/src/app/monostat-server/:delegated
+    ports:
+      - 3000:3000
+    env_file:
+      - 'variables.env'
