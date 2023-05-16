@@ -1,0 +1,9 @@
+monostat-bot/node_modules/
+monostat-client/node_modules/
+monostat-server/node_modules/
+
+monostat-bot/pnpm-lock.yaml
+monostat-client/pnpm-lock.yaml
+monostat-server/pnpm-lock.yaml
+
+variables.env

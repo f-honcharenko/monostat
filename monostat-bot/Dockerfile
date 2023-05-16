@@ -1,14 +1,15 @@
 FROM node:16-slim
 
-WORKDIR /usr/src/app
-
-COPY ./package*.json .
-
 RUN npm install -g pnpm
-RUN pnpm install
 
+WORKDIR /usr/src/
+COPY ./package.json ./
+RUN pnpm config set auto-install-peers true && pnpm install
+ENV PATH=/usr/src/node_modules/.bin:$PATH
+
+WORKDIR /usr/src/app/
 COPY . .
+RUN mkdir -p /usr/src/app/node_modules/
+RUN ln -s /usr/src/node_modules/ /usr/src/app/node_modules/
 
-EXPOSE 3001
-
-CMD [ "pnpm", "run", "start" ]
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
