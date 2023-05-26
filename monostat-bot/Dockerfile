@@ -11,5 +11,4 @@ WORKDIR /usr/src/app/
 COPY . .
 RUN mkdir -p /usr/src/app/node_modules/
 RUN ln -s /usr/src/node_modules/ /usr/src/app/node_modules/
-
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
