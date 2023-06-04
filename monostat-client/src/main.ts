@@ -67,19 +67,19 @@ async function createApp() {
     },
   });
 
-  router.beforeEach((to, from) => {
-    if (to.meta.requiresAuth && !session.isLoggedIn) {
-      const notif = useNotyf();
-      notif.error("You don't have access to this page", 2000);
+  // router.beforeEach((to, from) => {
+  //   if (to.meta.requiresAuth && !session.isLoggedIn) {
+  //     const notif = useNotyf();
+  //     notif.error("You don't have access to this page", 2000);
 
-      return {
-        name: "index-login",
-        query: {
-          next: to.fullPath,
-        },
-      };
-    }
-  });
+  //     return {
+  //       name: "index-login",
+  //       query: {
+  //         next: to.fullPath,
+  //       },
+  //     };
+  //   }
+  // });
 
   // @ts-expect-error
   Multiselect.props.noOptionsText.default = i18n.global.t(
