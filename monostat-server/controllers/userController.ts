@@ -9,7 +9,7 @@ export default class UserController {
     try {
       //   const list = await UserService.getUsers(_id, {
       //     _id: 1,
-      //     email: 1,
+      //     login: 1,
       //     boss: 1,
       //     role: 1,
       //   });

@@ -21,11 +21,11 @@ export default class UserService {
     }
     return user.toObject();
   };
-  static getUserByEmail = async (
-    email: string,
+  static getUserByLogin = async (
+    login: string,
     projection?: ProjectionType<IUser>
   ): Promise<IUser | null> => {
-    const user = await UserModel.findOne({ email }, projection);
+    const user = await UserModel.findOne({ login }, projection);
     if (!user) {
       return null;
     }
@@ -42,7 +42,7 @@ export default class UserService {
         new: true,
         select: {
           _id: true,
-          email: true,
+          login: true,
           role: true,
           boss: true,
         },
