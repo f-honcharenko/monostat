@@ -2,21 +2,21 @@
     <nav class="side">
         <div class="side_navigation">
             <RouterLink class="side_link" active-class="active" to="/">
-                <nav-button>Головна</nav-button>
+                <Button>Головна</Button>
             </RouterLink>
             <RouterLink class="side_link" active-class="active" to="/monitor">
-                <nav-button>Моніторинг</nav-button>
+                <Button>Моніторинг</Button>
             </RouterLink>
             <RouterLink class="side_link" active-class="active" to="/report">
-                <nav-button>Звіти</nav-button>
+                <Button>Звіти</Button>
             </RouterLink>
             <RouterLink class="side_link" active-class="active" to="/budget">
-                <nav-button>Бюджет</nav-button>
+                <Button>Бюджет</Button>
             </RouterLink>
         </div>
         
         <RouterLink class="side_link" :to="{ name: '' }">
-            <nav-button>Вийти</nav-button>
+            <Button>Вийти</Button>
         </RouterLink>
     </nav>
 </template>

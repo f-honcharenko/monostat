@@ -1,17 +1,8 @@
 <template>
-    <button class="wrapper" :class="{ 'wrapper--active': active }"><slot /></button>
+    <button class="wrapper"><slot /></button>
 </template>
 
 <script setup lang="ts">
-
-const props = withDefaults(
-  defineProps<{
-    active?: boolean;
-  }>(),
-  {
-    active: false,
-  }
-);
 
 </script>
 

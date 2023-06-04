@@ -4,9 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BallsButton: typeof import('D:/github/monostat/monostat-client/src/components/BallsButton.vue')['default']
+    Button: typeof import('D:/github/monostat/monostat-client/src/components/Button.vue')['default']
     Default: typeof import('D:/github/monostat/monostat-client/src/layouts/default.vue')['default']
     Footer: typeof import('D:/github/monostat/monostat-client/src/components/layout/Footer.vue')['default']
     Header: typeof import('D:/github/monostat/monostat-client/src/components/layout/Header.vue')['default']
+    Input: typeof import('D:/github/monostat/monostat-client/src/components/Input.vue')['default']
+    Login: typeof import('D:/github/monostat/monostat-client/src/layouts/login.vue')['default']
     Nav: typeof import('D:/github/monostat/monostat-client/src/components/layout/Nav.vue')['default']
     NavButton: typeof import('D:/github/monostat/monostat-client/src/components/NavButton.vue')['default']
     Side: typeof import('D:/github/monostat/monostat-client/src/components/layout/Side.vue')['default']
