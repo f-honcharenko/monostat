@@ -2,16 +2,16 @@ import { Document, model, Schema } from "mongoose";
 import { IUser } from "./userModel";
 
 export interface IToken extends Document {
-  token: string;
+  value: string;
   userID?: IUser["_id"];
 }
 
 const tokenSchema = new Schema<IToken>(
   {
-    token: { type: String, required: true },
+    value: { type: String, required: true, unique: true },
     userID: { type: Schema.Types.ObjectId, ref: "User" },
   },
-  { collection: "users" }
+  { collection: "tokens" }
 );
 
 export default model<IToken>("Token", tokenSchema);

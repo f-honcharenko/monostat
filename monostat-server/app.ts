@@ -6,6 +6,8 @@ import { ConnectOptions, connect } from "mongoose";
 import { json, urlencoded } from "body-parser";
 
 import authRouter from "@routes/authRoutes";
+import userRouter from "@routes/userRoutes";
+// import webhook from "@routes/webhook";
 
 dotenv.config();
 
@@ -28,7 +30,8 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/auth", authRouter);
-// app.use("/users", userRouter);
+app.use("/user", userRouter);
+// app.use("/wh", webhook);
 
 //The 404 handling middleware
 app.get("*", (_req: Request, res: Response): void => {
