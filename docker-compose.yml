@@ -37,7 +37,7 @@ services:
     volumes:
       - ./monostat-client/:/usr/src/app/:delegated
     ports:
-      - 3001:3001
+      - 3000:3000
     env_file:
       - 'variables.env'
 
