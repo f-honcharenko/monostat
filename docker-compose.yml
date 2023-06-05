@@ -35,9 +35,9 @@ services:
       dockerfile: ./Dockerfile
     command: pnpm run dev
     volumes:
-      - .:/usr/src/app/:delegated
+      - ./monostat-client/:/usr/src/app/:delegated
     ports:
-      - 8080:8080
+      - 3001:3001
     env_file:
       - 'variables.env'
 
