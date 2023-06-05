@@ -27,18 +27,19 @@ services:
   #     - ./monostat-bot/:/usr/src/app/:delegated
   #   env_file:
   #     - 'variables.env'
-  monostat-client:
-    container_name: monostat-client
-    working_dir: /usr/src/app/
-    build:
-      context: ./monostat-client/
-      dockerfile: ./Dockerfile
-    command: pnpm run dev
-    volumes:
-      - ./monostat-client/:/usr/src/app/:delegated
-    ports:
-      - 3000:3000
-    env_file:
-      - 'variables.env'
+  # monostat-client:
+  #   container_name: monostat-client
+  #   working_dir: /usr/src/app/
+  #   build:
+  #     context: ./monostat-client/
+  #     dockerfile: ./Dockerfile
+  #   # command: pnpm run dev
+  #   command: pnpm run dev
+  #   volumes:
+  #     - ./monostat-client/:/usr/src/app/:delegated
+  #   ports:
+  #     - 3000:3000
+  #   env_file:
+  #     - 'variables.env'
 
 
